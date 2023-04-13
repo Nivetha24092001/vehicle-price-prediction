@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+   
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/newnewcar.css') }}"> 
+	   <title>Prediction</title>
+
+</head>
+
+<body>
+    <h1> WELCOME TO OUR SITE !!!</h1>
+    <div class="login center">
+
+        <h2> Sale Price Prediction</h2>
+
+
+        <br>
+        <form action="{{ url_for('newcar')}}" method="POST">
+
+           <h4>Enter Model </h4>
+
+
+           <label for="Model">Select a Car_model:</label>
+           <select id="Model" name="Model">
+	      <optgroup label = "Maruti">
+			<option value = 0 > Alto </option>
+			<option value = "1" > Brezza  </option>
+			<option value = "9" > Swift </option>
+			<option value = "15" > Baleno </option>
+			<option value = "17" > Ertiga </option>
+			<option value = "19" > Dzire </option>
+			<option value = "30" > Celerio </option>
+			<option value = "36" > S-Presso  </option>
+			<option value = "45" > Ignis </option>
+			<option value = "49" > XL6 </option>
+			<option value = "51" > Eeco </option>
+			<option value = "53" > S-cross </option>
+			<option value = "54" > Ciaz  </option>
+			
+		</optgroup>
+
+   
+		<optgroup label = "Mahindra">
+			<option value = "2" > Thar </option>
+			<option value = "3" > XUV700 </option>
+			<option value = "4" > Scorpio - N </option>
+			<option value = "8" > Bolero </option>
+                  <option value = "24" > XUV 300 </option>
+			<option value = "27" > Scorpio </option>
+			<option value = "83" > Marazzo </option>
+			<option value = "86" > Heights </option>
+			<option value = "110" > KUV  </option>
+			<option value = "138" > E  </option>
+
+			
+		</optgroup>
+
+		<optgroup label = "Toyato">
+			<option value = "5" > Fortuner </option>
+			<option value = "16" > Innova </option>
+			<option value = "59" > Vellfire </option>
+			<option value = "60" > Hilux </option>
+			<option value = "65" > Camry </option>
+			<option value = "163" > Glanza </option>
+			
+		</optgroup>
+
+		<optgroup label = "Hyundai">
+			<option value = "6" > Creta  </option>
+			<option value = "11" > Venue </option>
+			<option value = "13" > Tucson </option>
+			<option value = "23" > i20 </option>
+			<option value = "28" > Verna </option>
+			<option value = "33" > Kona </option>
+			<option value = "41" > Alcazar </option>
+			<option value = "42" > Aura </option>
+			<option value = "55" > Santro </option>
+			<option value = "158" > Xcent  </option>
+			
+		</optgroup>
+
+		<optgroup label = "Kia">
+			<option value = "12" > Seltos </option>
+			<option value = "18" > Sonet </option>
+			<option value = "72" > EV6 </option>
+			
+		</optgroup>
+
+
+		<optgroup label = "Honda">
+			<option value = "20" > City </option>
+			<option value = "39" > Amaze </option>
+			<option value = "74" > Jazz </option>
+			<option value = "75" > WR-V </option>
+			
+		</optgroup>
+
+          <optgroup label = "Land">
+			<option value = "21" > Rover </option>
+			
+		</optgroup>
+
+		<optgroup label = "MG">
+			<option value = "25" >Hector </option>
+			<option value = "37" > Astor </option>
+			<option value = "61" > Gloster </option>
+			
+			<option value = "91" > ZS  </option>
+			
+
+
+						
+		</optgroup>
+
+		<optgroup label = "Citroen">
+			<option value = "29" > C3  </option>
+			<option value = "103" > C5 </option>
+			
+		</optgroup>
+
+			<optgroup label = "Nissan">
+			<option value = "31" > Magnite </option>
+			<option value = "82" > Kicks </option>
+			<option value = "136" > GT-R </option>
+			
+					
+		</optgroup>
+
+		<optgroup label = "Renault">
+			<option value = "32" > KWID </option>
+			<option value = "35" > Kiger </option>
+			<option value = "40" > Triber </option>
+			
+		</optgroup>
+
+		<optgroup label = "Lamborghini">
+			<option value = "38" >  Urus  </option>
+			<option value = "62" > Aventador  </option>
+			<option value = "160" > Huracan  </option>
+			
+		</optgroup>
+
+		<optgroup label = "Volkswagen">
+			<option value = "43" > Virtus </option>
+			<option value = "56" > Taigun </option>
+			<option value = "66" >  Tiguan </option>
+			<option value = "88" > Vento </option>
+			
+		</optgroup>
+		
+		<optgroup label = "Skoda ">
+			<option value = "44" > Slavia </option>
+			<option value = "48" > Cush </option>
+			<option value = "68" >  Octavia </option>
+			<option value = "69" > Superb </option>
+			<option value = "77" > Kodiaq  </option>
+			
+		</optgroup>
+
+		<optgroup label = "Mercedes-Benz">
+			<option value = "46" > GLA </option>
+			<option value = "84" > C-Class </option>
+			<option value = "93" > E-Class </option>
+			<option value = "101" > GLS </option>
+			<option value = "113" > AMG </option>
+			<option value = "121" > S-Class </option>
+			<option value = "124" > GLC </option>
+			<option value = "126" > Maybach </option>
+			<option value = "131" > EQS </option>
+			<option value = "135" > G-Class </option>
+			<option value = "140" > V-Class </option>
+			<option value = "151" > GLE </option>
+			<option value = "154" > A-Class </option>
+			<option value = "156" > EQC </option>
+			<option value = "161" > CLS </option>
+			
+			
+			
+		</optgroup>
+
+		<optgroup label = "BMW ">
+			<option value = "57" > X7 </option>
+			<option value = "63" > X1 </option>
+			<option value = "64" > X5 </option>
+			<option value = "79" > X3 </option>
+			<option value = "80" > Z4 </option>
+			<option value = "81" > Z3 </option>
+			<option value = "85" > X6 </option>
+			<option value = "92" > Z7 </option>
+			<option value = "94" > I4 </option>
+			<option value = "97" > X2 </option>
+			<option value = "99" > Z5 </option>
+			<option value = "119" > IX </option>
+			<option value = "137" > M2 </option>
+			<option value = "152" > M4 </option>
+			<option value = "153" > X8 </option>
+
+			
+		</optgroup>
+
+		<optgroup label = " AUDI ">
+			<option value = "58" > Q7 </option>
+			<option value = "70" > A6 </option>
+			<option value = "78" > A4 </option>
+			<option value = "89" > Q5 </option>
+			<option value = "100" > Q2 </option>
+			<option value = "112" > E-Tron </option>
+			<option value = "133" > RS7 </option>
+			<option value = "166" > RS </option>
+
+			
+		</optgroup>
+		
+		<optgroup label = "Rolls-Royce ">
+			<option value = "67" > Ghost  </option>
+			<option value = "117" > Cullinan </option>
+			
+			
+		</optgroup>
+
+		<optgroup label = "Ferrari  ">
+			<option value = "90" > Roma </option>
+			<option value = "125" > Portofino  </option>
+			<option value = "132" > 812 </option>
+			<option value = "146" > SF90 </option>
+			<option value = "150" > F8 </option>
+
+		</optgroup>
+
+		<optgroup label = " Jaguar ">
+			<option value = "95" > F-TYPE </option>
+			<option value = "107" > XE </option>
+			<option value = "109" > F-Pace </option>
+			<option value = "123" > XF </option>
+			<option value = "159" > I-Pace </option>
+		
+		
+		</optgroup>
+
+		<optgroup label = "Porsche ">
+			<option value = "102" > Cayenne  </option>
+			<option value = "106" > Macan </option>
+			<option value = "115" > Taycan </option>
+			<option value = "141" > 911 </option>
+			<option value = "142" > Panamera </option>
+			
+		</optgroup>
+
+		<optgroup label = "Lexus ">
+			<option value = "114" >  ES </option>
+			<option value = "116" > LS </option>
+			<option value = "144" > NX </option>
+			<option value = "148" > LC </option>
+			<option value = "157" > RX </option>
+			<option value = "162" > LX  </option>
+			
+		</optgroup>
+
+		<optgroup label = "Maserati ">
+			<option value = "122" > Quattroporte </option>
+			<option value = "127" > Levante </option>
+			<option value = "143" > Ghibli </option>
+			<option value = "149" > GranTurismo </option>
+			<option value = "155" > GranCabrio  </option>
+			
+		</optgroup>
+
+		
+			
+           </select>
+
+   		<br>
+		<br>	
+		<br>
+  
+            
+
+
+		<label for="seating_capacity">Select a seating_capacity:</label>
+           <select id="seating_capacity" name="seating_capacity	">
+	      
+			
+			<option value = "4" > 4 </option>
+			<option value = "5" > 5 </option>
+			<option value = "6" > 6 </option>
+			<option value = "7" > 7 </option>
+			<option value = "8" > 8 </option>
+		
+		</select>
+		<br>
+		<br>	
+		<br>
+
+
+
+		
+
+
+
+		<label for="transmission_type">Select a transmission_type:</label>
+           <select id="transmission_type" name="Engine_type">
+	      
+			<option value = 1 > Automatic </option>			
+			<option value = 2 > Manual </option>
+			<option value = "3" > Electric </option>
+			
+		</select>
+		<br>
+
+          
+
+
+		 <h4>Enter Fuel Type </h4>
+            <input type="radio" name="fuel_type" value = 1> Petrol
+		<input type="radio" name="fuel_type" value = 4> Electricity
+		 <input type="radio" name="fuel_type" value = 2> Diesel
+		<input type="radio" name="fuel_type" value = 3> CNG
+
+
+		
+		
+            
+            
+            
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">SUBMIT</button>
+        </form>
+        <br>
+        {{ prediction_text }}
+    </div>
+</body>
+</html>

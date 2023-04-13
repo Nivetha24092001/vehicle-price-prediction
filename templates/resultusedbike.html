@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+   
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/newusedbike.css') }}"> 
+	   <title>Prediction</title>
+
+</head>
+
+<body>
+    <h1> WELCOME TO OUR SITE !!!</h1>
+    <div class="login center">
+
+        <h2> Resale Price Prediction</h2>
+
+
+        <br>
+        <form action="{{ url_for('usedbike')}}" method="POST">
+
+           <h4>Enter Model </h4>
+
+
+           <label for="bike_name">Select a Bike_model:</label>
+           <select id="bike_name" name="bike_name">
+	      <optgroup label = "Bajaj">
+			<option value = 1 > Pulsar NS </option>
+			<option value = "2" > Pulsar RS ABS </option>
+			<option value = "3" > Pulsar </option>
+			<option value = "4" > Avenger </option>
+			<option value = "5" > Platina </option>
+			<option value = "6" > V </option>
+			<option value = "7" > Discover </option>
+			<option value = "8" > Avenger Street  </option>
+			<option value = "9" > Dominar ABS </option>
+		</optgroup>
+
+   
+		<optgroup label = "Harley-Davidson">
+			<option value = "11" > Street ABS </option>
+			
+		</optgroup>
+
+		<optgroup label = "Hero">
+			<option value = "21" > Super Splendor </option>
+			<option value = "22" > CD Deluxe </option>
+			<option value = "23" > Passion Pro </option>
+			<option value = "24" > Splendor plus </option>
+			<option value = "25" > HF Deluxe </option>
+			<option value = "26" > Passion </option>
+			<option value = "27" > CBZ Xtreme </option>
+			<option value = "28" > Hunk Rear Disc  </option>
+		</optgroup>
+
+		<optgroup label = "Honda">
+			<option value = "31" > CB Shine </option>
+			<option value = "32" > CB Hornet R STD </option>
+			<option value = "33" > CB Trigger </option>
+			
+		</optgroup>
+
+		<optgroup label = "KTM">
+			<option value = "41" > RC </option>
+			<option value = "42" > Duke </option>
+			
+		</optgroup>
+
+
+		<optgroup label = "Royal Enfield">
+			<option value = "51" > Classic </option>
+			<option value = "52" > Thunderbird </option>
+			<option value = "53" > Bullet Electra </option>
+			
+		</optgroup>
+
+          <optgroup label = "Suzuki">
+			<option value = "61" > Slingshot Plus </option>
+			<option value = "62" > Zeus </option>
+			
+		</optgroup>
+
+		<optgroup label = "TVS">
+			<option value = "71" > Apache RTR </option>
+			
+		</optgroup>
+
+		<optgroup label = "Yamaha">
+			<option value = "81" > FZS </option>
+			<option value = "82" > YZF - R </option>
+			<option value = "83" > FZ </option>
+			<option value = "84" > FAZER </option>
+			<option value = "85" > SZ-RR </option>
+			
+		</optgroup>
+           </select>
+
+   
+  
+            
+
+		<h4>Enter kms_driven </h4>
+            <input type="text" name="kms_driven" placeholder="kms_driven" required="required"/>
+
+		
+           <h4>Enter owner </h4>
+            <input type="radio" name="owner" value = 1> First Owner
+		<input type="radio" name="owner" value = 2> Second Owner
+            <input type="radio" name="owner" value = 3> Third Owner
+		 <input type="radio" name="owner" value = 4> Fourth Owner Or More 
+
+
+		<h4>Enter age </h4>
+            <input type="text" name="age" placeholder="age" required="required"/>
+            
+		<h4>Enter power </h4>
+            <input type="text" name="power" placeholder="power" required="required"/>
+            
+		
+            
+            
+            
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">SUBMIT</button>
+        </form>
+        <br>
+        {{ prediction_text }}
+    </div>
+</body>
+</html>

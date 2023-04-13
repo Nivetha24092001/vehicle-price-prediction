@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+   
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/newnewbike.css') }}"> 
+	   <title>Prediction</title>
+
+</head>
+
+<body>
+    <h1> WELCOME TO OUR SITE !!!</h1>
+    <div class="login center">
+
+        <h2> Sale Price Prediction</h2>
+
+
+        <br>
+        <form action="{{ url_for('newbike')}}" method="POST">
+
+           <h4>Enter Model </h4>
+
+
+           <label for="Bike_model">Select a Bike_model:</label>
+           <select id="Bike_model" name="Bike_model">
+	      <optgroup label = "Bajaj">
+			<option value = 0 > Avenger </option>
+			<option value = "17" > Pulsar  </option>
+			<option value = "84" > Pulsar NS </option>
+			<option value = "85" > CT 100 </option>
+			<option value = "86" > 220 f </option>
+			<option value = "87" > Dominar </option>
+			<option value = "88" > Pulsar ABS </option>
+			<option value = "111" > Cruise  </option>
+			
+		</optgroup>
+
+   
+		<optgroup label = "TVS">
+			<option value = "1" > Apache RTR </option>
+			<option value = "18" > Jupiter </option>
+			<option value = "113" > Pluto </option>
+			<option value = "118" > Apache XTR </option>	
+		</optgroup>
+
+		<optgroup label = "Hero">
+			<option value = "2" > Passion </option>
+			<option value = "19" > Glamour </option>
+			<option value = "59" > Deluxe </option>
+			<option value = "60" > Xtreme </option>
+			<option value = "61" > Pulse </option>
+			<option value = "62" > Thunder </option>
+			<option value = "63" > Destini </option>
+			<option value = "119" > Passion Pro  </option>
+			<option value = "127" > Duster </option>
+			<option value = "197" > Aprilia </option>
+			<option value = "198" > Zeppi </option>
+			<option value = "199" > Mono </option>
+			<option value = "200" > Ferori </option>
+		</optgroup>
+
+		<optgroup label = "Honda">
+			<option value = "3" > Activa 3g </option>
+			<option value = "20" > shine </option>
+			<option value = "53" > Splendor </option>
+			<option value = "54" > Activa 5g </option>
+			<option value = "55" > Unicorn </option>
+			<option value = "56" > Livo </option>
+			<option value = "57" > Hornet </option>
+			<option value = "58" > X - Blade </option>
+			<option value = "120" > Activa 4g </option>
+			<option value = "140" > Shine XR </option>
+			<option value = "196" > Pleasure </option>
+			
+		</optgroup>
+
+		<optgroup label = "Suzuki">
+			<option value = "4" > Access </option>
+			<option value = "21" > Gixxer </option>
+			<option value = "97" > Hayabusa </option>
+			<option value = "9" > Ninja </option>
+			<option value = "98" > GS 990 </option>
+			<option value = "99" > Intruder </option>
+			<option value = "35" > Shutter </option>
+			<option value = "100" > Dragon </option>
+			<option value = "101" > Monster </option>
+			<option value = "102" > Gangster </option>
+			<option value = "103" > Road Star </option>
+			<option value = "104" > Zedi </option>
+			<option value = "121" > Access LR </option>
+			<option value = "128" > Access ATR </option>
+			<option value = "147" > Gixer RC </option>
+			
+		</optgroup>
+
+
+		<optgroup label = "Royal Enfield">
+			<option value = "5" > Classic </option>
+			<option value = "22" > Bullet </option>
+			
+		</optgroup>
+
+          <optgroup label = "Yamaha">
+			<option value = "6" > Fascino </option>
+			<option value = "23" > FZ - S </option>
+			<option value = "89" > N Max </option>
+			<option value = "90" > XSR </option>
+			<option value = "91" > MTR </option>
+			<option value = "92" > NTR </option>
+			<option value = "93" > RTR </option>
+			<option value = "77" > Street Fighter </option>
+			<option value = "94" > DDR </option>
+			<option value = "95" > SDR </option>
+			<option value = "96" > FDR </option>
+			<option value = "122" > Fascino XS </option>
+			<option value = "129" > Fascino STR </option>
+			<option value = "135" > FZ - SR </option>
+			
+		</optgroup>
+
+		<optgroup label = "KTM">
+			<option value = "7" >RC </option>
+			<option value = "24" > Duke </option>
+			<option value = "51" > Adventure </option>
+			
+			<option value = "52" > Duke  </option>
+			<option value = "114" > Duke XZ </option>
+			<option value = "130" > Duke RCX </option>
+			<option value = "136" > Duke DAM </option>
+
+
+
+						
+		</optgroup>
+
+		<optgroup label = "Mahindra">
+			<option value = "8" > Gusto GS </option>
+			<option value = "25" > Mojo </option>
+			<option value = "33" > Gutter </option>
+			<option value = "34" > Flutter </option>
+			<option value = "35" > Shutter </option>
+			<option value = "36" > Jojo </option>
+			<option value = "115" > Mojo CM </option>
+			<option value = "123" > GS </option>
+			<option value = "137" > Mojo MAZ </option>
+			<option value = "144" > Tsunami </option>
+			<option value = "145" > Speedo </option>
+			<option value = "148" > Maza </option>
+			
+		</optgroup>
+
+			<optgroup label = "Kawaski">
+			<option value = "9" > Ninja </option>
+			<option value = "26" > Vulcan </option>
+			<option value = "49" > Versys </option>
+			<option value = "50" > G 900 </option>
+			<option value = "116" > Vulcon NY </option>
+			<option value = "124" > Ninja Pro </option>
+			<option value = "131" > Ninja Kaboom </option>
+			<option value = "138" > Vulture </option>
+			<option value = "149" > Vulcan SWIP </option>
+					
+		</optgroup>
+
+		<optgroup label = "Ducati">
+			<option value = "10" > Scrambler </option>
+			<option value = "27" > Panigale </option>
+			<option value = "76" > Tumbler </option>
+			<option value = "77" > Street Fighter </option>
+			<option value = "78" > Multi Strada </option>
+			<option value = "79" > Svartpilen </option>
+			<option value = "80" > Hsness </option>
+			<option value = "81" > Road Strapper </option>
+			<option value = "82" > Cruise </option>
+			<option value = "83" > Aboarder </option>
+			<option value = "117" > Panigale ZR </option>
+			<option value = "125" > Scrambler DU </option>
+			<option value = "132" > scrambler ZD </option>
+			
+		</optgroup>
+
+		<optgroup label = "BMW">
+			<option value = "11" > G 310 R </option>
+			<option value = "28" > 310 GS </option>
+			<option value = "45" > F 900 R </option>
+			<option value = "46" > F 990 XR </option>
+			<option value = "47" > G 310 S </option>
+			<option value = "48" > G 320 X </option>
+			<option value = "133" > G 410 R </option>
+			<option value = "139" > GSTR 310 </option>
+			<option value = "150" > BR 310 </option>
+		</optgroup>
+
+		<optgroup label = "Banelli">
+			<option value = "12" > Limperiale </option>
+			<option value = "29" > leoncino </option>
+			<option value = "41" > TRK 502 </option>
+			<option value = "42" > 1200 Custom </option>
+			<option value = "43" > Imperale </option>
+			<option value = "44" > TRK 550 </option>
+			<option value = "126" > Limperiale blue </option>
+			<option value = "134" > Limperiale BB </option>
+			<option value = "140" > Limperiale CAP </option>
+			<option value = "151" > Limperiale LLI </option>
+	
+		</optgroup>
+		
+		<optgroup label = "Harley Davidson">
+			<option value = "13" > Street </option>
+			<option value = "30" > Iron </option>
+			<option value = "37" > Fat Boy </option>
+			<option value = "38" > 48 </option>
+			<option value = "39" > Low Rider </option>
+			<option value = "40" > Rider NZ </option>
+			<option value = "141" > Iron Fist </option>
+			<option value = "152" > Romeo </option>
+			
+		</optgroup>
+
+		<optgroup label = "Lectro Electric">
+			<option value = "14" > Gold </option>
+			<option value = "31" > Leon </option>
+			<option value = "69" > Feon </option>
+			<option value = "70" > Essentia </option>
+			<option value = "71" > Guide </option>
+			<option value = "72" > Pride </option>
+			<option value = "73" > XSL </option>
+			<option value = "74" > Peepy </option>
+			<option value = "112" > Zeddy </option>
+			<option value = "142" > Bronze </option>
+
+			
+			
+		</optgroup>
+
+		<optgroup label = "Li-Ion electrik Solution ">
+			<option value = "15" > Silver </option>
+			<option value = "32" > Ceon </option>
+			<option value = "64" > Prime </option>
+			<option value = "65" > Power </option>
+			<option value = "66" > Kurrent </option>
+			<option value = "67" > Sunny </option>
+			<option value = "31" > Leon </option>
+			<option value = "68" > Deon </option>
+			<option value = "43" > Fiesta </option>
+
+
+			
+		</optgroup>
+
+		<optgroup label = " Ather Energy ">
+			<option value = "16" > Energitic </option>
+			<option value = "105" > Shiner </option>
+			<option value = "106" > Raina </option>
+			<option value = "107" > Grudge </option>
+			<option value = "108" > Booster </option>
+			<option value = "109" > XGB </option>
+			<option value = "110" > YGB </option>
+			
+		</optgroup>
+		
+		<optgroup label = "Odysse ">
+			<option value = "153" > Electric Evoqis </option>
+			<option value = "154" > Electric Evoqis XS </option>
+			<option value = "155" > Electric Evoqis XML </option>
+			<option value = "156" > Electric Evoqis HRT </option>
+			<option value = "157" > Electric Evoqis HP </option>
+			<option value = "158" > Electric Evoqis VIP </option>
+			
+		</optgroup>
+
+		<optgroup label = "Revolt Motors ">
+			<option value = "159" > RV </option>
+			<option value = "160" > Cafa Racer </option>
+			
+		</optgroup>
+
+		<optgroup label = "CF moto ">
+			<option value = "161" > NK </option>
+			<option value = "162" > MT </option>
+			<option value = "163" > SR </option>
+			<option value = "164" > NR </option>
+			<option value = "165" > NTR </option>
+			<option value = "166" > ZR </option>
+			<option value = "167" > ZTR </option>
+			<option value = "168" > NZ </option>
+			
+		</optgroup>
+
+		<optgroup label = "Triumph ">
+			<option value = "169" > Street Twin </option>
+			<option value = "170" > Rocket </option>
+			<option value = "171" > Bournville </option>
+			<option value = "172" > Tiger </option>
+			<option value = "173" > ThunderBird </option>
+			<option value = "174" > Speed Master </option>
+			<option value = "175" > Racer </option>
+			<option value = "176" > Rider </option>
+			<option value = "177" > ThunderBird </option>
+			<option value = "178" > Avenue </option>
+			<option value = "179" > Crusher Master </option>
+			<option value = "180" > Tiger1200 </option>
+			<option value = "181" > Panther 1250 </option>
+			
+		</optgroup>
+
+		<optgroup label = "Jawa ">
+			<option value = "183" >  Perek </option>
+			<option value = "184" > 42 </option>
+			<option value = "185" > Style </option>
+			<option value = "186" > Milo </option>
+			<option value = "187" > Xylo </option>
+			<option value = "188" > HTC  </option>
+			<option value = "189" > Zeppelin </option>
+		
+		</optgroup>
+
+		<optgroup label = "22Kymco ">
+			<option value = "190" > Flow </option>
+			<option value = "191" > Iflow </option>
+			<option value = "143" > Fiesta </option>
+			<option value = "192" > Benzo </option>
+			<option value = "193" > Like EV </option>
+			<option value = "194" > Like EM </option>
+			<option value = "195" > X - Town </option>
+			
+		</optgroup>
+
+		<optgroup label = "Okinawa ">
+			<option value = "201" > Praise </option>
+			<option value = "202" > Praise </option>
+			<option value = "203" > Praise Pro </option>
+			<option value = "204" > Apirori </option>
+			<option value = "205" > Ridge  </option>
+			<option value = "206" > Raise </option>
+			<option value = "207" > Lite </option>
+			<option value = "208" > Bright  </option>
+			<option value = "209" > Kite </option>
+		</optgroup>
+
+		
+		<optgroup label = "Bgauss ">
+			<option value = "210" > Prior </option>
+			<option value = "211" > UM </option>
+			<option value = "212" > A1  </option>
+			<option value = "213" > B8 </option>
+			<option value = "214" > Radiator  </option>
+			<option value = "215" > Razor </option>
+			<option value = "216" > Flash </option>
+			<option value = "217" > Hash  </option>
+		</optgroup>
+
+			
+           </select>
+
+   		<br>
+		<br>	
+		<br>
+  
+            
+
+
+		<label for="Manufactured_year">Select a Manufactured_year:</label>
+           <select id="Manufactured_year" name="Manufactured_year	">
+	      
+			<option value = 0 > 2020 </option>			
+			<option value = 1 > 2019 </option>
+			<option value = "2" > 2018 </option>
+			<option value = "3" > 2017 </option>
+			<option value = "4" > 2016 </option>
+			<option value = "5" > 2011 </option>
+			<option value = "6" > 2012 </option>
+			<option value = "7" > 2013 </option>
+			<option value = "8" > 2014 </option>
+			<option value = "9" > 2015 </option>
+		</select>
+		<br>
+		<br>	
+		<br>
+
+
+
+		<label for="Engine_type">Select a Engine_type:</label>
+           <select id="Engine_type" name="Engine_type">
+	      
+			<option value = 0 > Single </option>			
+			<option value = 1 > V - Twin </option>
+			<option value = "2" > Boxer </option>
+			<option value = "3" > Two - Stroke </option>
+			<option value = "4" > Dual Stroke </option>
+			<option value = "5" > Oxidiser - Air Inlet </option>
+		</select>
+		<br>
+
+          
+
+
+		 <h4>Enter Fuel Type </h4>
+            <input type="radio" name="Fuel_type" value = 0> Petrol
+		<input type="radio" name="Fuel_type" value = 1> Electricity
+
+
+		<h4>Enter CC </h4>
+            <input type="text" name="CC(Cubic capacity)" placeholder="CC(Cubic capacity)" required="required"/>
+            
+		<h4>Enter Fuel Capacity </h4>
+            <input type="text" name="Fuel_Capacity" placeholder="Fuel_Capacity" required="required"/>
+            
+		
+            
+            
+            
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">SUBMIT</button>
+        </form>
+        <br>
+        {{ prediction_text }}
+    </div>
+</body>
+</html>

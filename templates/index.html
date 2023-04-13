@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body bgcolor="silver">  
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styleindex.css') }}">  
+  <title>Prediction</title>  
+</head>
+<body>
+    
+    <div class="login center">
+        <h2>To proceed with the prediction.</h2>
+        <br>
+		
+	<form action="{{ url_for('rnewbike')}}" method="POST">
+            <button id="newbike" type="submit" 
+                    class="btn btn-primary btn-block btn-large"> Bike Sale Price prediction</button>
+        </form>
+	<br>
+
+	
+	<form action="{{ url_for('rusedbike')}}" method="POST">
+            <button id="usedbike" type="submit" 
+                    class="btn btn-primary btn-block btn-large">Bike Resale Price prediction</button>
+        </form>
+	<br>
+
+ 	<form action="{{ url_for('rnewcar')}}" method="POST">
+            <button id="newcar" type="submit" 
+                    class="btn btn-primary btn-block btn-large"> Car Sale Price prediction</button>
+        </form>
+	<br>
+
+	<form action="{{ url_for('rusedcar')}}" method="POST">
+            <button id="usedcar" type="submit" 
+                    class="btn btn-primary btn-block btn-large"> Car Resale Price prediction</button>
+        </form>
+	<br>
+        
+        
+    </div>
+</body>
+</html>
